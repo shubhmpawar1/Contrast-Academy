@@ -1,43 +1,111 @@
-<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+<div class="relative">
 
-    <!-- Card -->
-    <div class="bg-white rounded-2xl shadow-sm p-4 border border-gray-100">
-        <p class="text-sm text-gray-500">Total Courses</p>
-        <h2 class="text-2xl font-semibold text-gray-900 mt-1">
-            10
-        </h2>
+    <!-- Background Layer -->
+    <div class="absolute inset-0 -z-10 bg-gradient-to-br from-gray-50 via-white to-gray-100
+              dark:from-gray-950 dark:via-gray-900 dark:to-gray-950"></div>
+
+    <!-- Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+
+        <!-- Card -->
+        <div class="group rounded-2xl border border-gray-200/60 bg-white/70 backdrop-blur-md
+                p-6 shadow-sm transition-all duration-300 hover:shadow-lg hover:-translate-y-1
+                dark:border-gray-800/60 dark:bg-gray-900/60">
+
+            <p class="text-xs font-medium uppercase tracking-wider text-gray-500 dark:text-gray-400">
+                Total Courses
+            </p>
+
+            <div class="mt-4 flex items-end justify-between">
+                <h2 class="text-4xl font-semibold tracking-tight text-gray-900 dark:text-white">
+                    5
+                </h2>
+
+                <span class="text-xs text-gray-400">
+                    Active
+                </span>
+            </div>
+        </div>
+
+        <!-- Card -->
+        <div class="group rounded-2xl border border-gray-200/60 bg-white/70 backdrop-blur-md
+                p-6 shadow-sm transition-all duration-300 hover:shadow-lg hover:-translate-y-1
+                dark:border-gray-800/60 dark:bg-gray-900/60">
+
+            <p class="text-xs font-medium uppercase tracking-wider text-gray-500 dark:text-gray-400">
+                Completed
+            </p>
+
+            <div class="mt-4 flex items-end justify-between">
+                <h2 class="text-4xl font-semibold tracking-tight text-gray-900 dark:text-white">
+                    3
+                </h2>
+
+                <span class="text-xs text-gray-400">
+                    Finished
+                </span>
+            </div>
+        </div>
+
+        <!-- Card -->
+        <div class="group rounded-2xl border border-gray-200/60 bg-white/70 backdrop-blur-md
+                p-6 shadow-sm transition-all duration-300 hover:shadow-lg hover:-translate-y-1
+                dark:border-gray-800/60 dark:bg-gray-900/60">
+
+            <p class="text-xs font-medium uppercase tracking-wider text-gray-500 dark:text-gray-400">
+                Tasks Done
+            </p>
+
+            <div class="mt-4 flex items-end justify-between">
+                <h2 class="text-4xl font-semibold tracking-tight text-gray-900 dark:text-white">
+                    2
+                </h2>
+
+                <span class="text-xs text-gray-400">
+                    Progress
+                </span>
+            </div>
+        </div>
+
+        <!-- Card -->
+        <div class="group rounded-2xl border border-gray-200/60 bg-white/70 backdrop-blur-md
+                p-6 shadow-sm transition-all duration-300 hover:shadow-lg hover:-translate-y-1
+                dark:border-gray-800/60 dark:bg-gray-900/60">
+
+            <p class="text-xs font-medium uppercase tracking-wider text-gray-500 dark:text-gray-400">
+                Pending
+            </p>
+
+            <div class="mt-4 flex items-end justify-between">
+                <h2 class="text-4xl font-semibold tracking-tight text-gray-900 dark:text-white">
+                    1
+                </h2>
+
+                <span class="text-xs text-gray-400">
+                    In queue
+                </span>
+            </div>
+        </div>
+
+        <!-- Card -->
+        <div class="group rounded-2xl border border-gray-200/60 bg-white/70 backdrop-blur-md
+                p-6 shadow-sm transition-all duration-300 hover:shadow-lg hover:-translate-y-1
+                dark:border-gray-800/60 dark:bg-gray-900/60">
+
+            <p class="text-xs font-medium uppercase tracking-wider text-gray-500 dark:text-gray-400">
+                Due Tasks
+            </p>
+
+            <div class="mt-4 flex items-end justify-between">
+                <h2 class="text-4xl font-semibold tracking-tight text-gray-900 dark:text-white">
+                    2
+                </h2>
+
+                <span class="text-xs text-gray-400">
+                    Urgent
+                </span>
+            </div>
+        </div>
+
     </div>
-
-    <!-- Card -->
-    <div class="bg-white rounded-2xl shadow-sm p-4 border border-gray-100">
-        <p class="text-sm text-gray-500">Completed Courses</p>
-        <h2 class="text-2xl font-semibold text-green-600 mt-1">
-            5
-        </h2>
-    </div>
-
-    <!-- Card -->
-    <div class="bg-white rounded-2xl shadow-sm p-4 border border-gray-100">
-        <p class="text-sm text-gray-500">Tasks Completed</p>
-        <h2 class="text-2xl font-semibold text-blue-600 mt-1">
-            5
-        </h2>
-    </div>
-
-    <!-- Card -->
-    <div class="bg-white rounded-2xl shadow-sm p-4 border border-gray-100">
-        <p class="text-sm text-gray-500">Pending Tasks</p>
-        <h2 class="text-2xl font-semibold text-yellow-500 mt-1">
-            2
-        </h2>
-    </div>
-
-    <!-- Card -->
-    <div class="bg-white rounded-2xl shadow-sm p-4 border border-gray-100">
-        <p class="text-sm text-gray-500">Due Tasks</p>
-        <h2 class="text-2xl font-semibold text-red-500 mt-1">
-            3
-        </h2>
-    </div>
-
 </div>
