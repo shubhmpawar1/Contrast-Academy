@@ -1,14 +1,14 @@
 <div class="min-h-screen bg-neutral-900 pb-12">
     <app-navbar></app-navbar>
 
-    <div class="max-w-7xl mx-auto px-6 pt-8 pb-12 flex flex-col gap-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 pt-6 sm:pt-8 pb-12 flex flex-col gap-8 sm:gap-10">
         <!-- Header Section -->
-        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
             <div>
-                <h1 class="text-3xl font-extrabold tracking-tight text-white">
+                <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-white">
                     Dashboard
                 </h1>
-                <p class="text-sm text-neutral-400 mt-2 font-medium">
+                <p class="text-xs sm:text-sm text-neutral-400 mt-1 sm:mt-2 font-medium">
                     Welcome back, here's what's happening with your courses today.
                 </p>
             </div>
@@ -20,9 +20,9 @@
         </div>
 
         <!-- Main Content Area -->
-        <div class="grid grid-cols-1 xl:grid-cols-3 gap-8">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8">
             <!-- Left Column: Courses & Tasks (Spans 2 columns) -->
-            <div class="xl:col-span-2 flex flex-col gap-8">
+            <div class="lg:col-span-2 flex flex-col gap-6 sm:gap-8">
                 <app-course-cards></app-course-cards>
                 <div class="h-full">
                     <app-task-section></app-task-section>
@@ -30,7 +30,7 @@
             </div>
 
             <!-- Right Column: Activity Feed -->
-            <div class="xl:col-span-1 h-fit">
+            <div class="lg:col-span-1 h-fit">
                 <app-activity-feed></app-activity-feed>
             </div>
         </div>
