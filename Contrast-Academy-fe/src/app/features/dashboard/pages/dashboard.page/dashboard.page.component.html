@@ -1,10 +1,45 @@
-<div class="min-h-screen bg-white dark:bg-black">
+<div class="min-h-screen bg-neutral-50 dark:bg-neutral-900 pb-12">
     <app-navbar></app-navbar>
-    <div class="max-w-7xl mx-auto p-6 space-y-10">
-        <app-stats-card></app-stats-card>
-        <app-course-cards></app-course-cards>
-        <app-task-section></app-task-section>
-        <app-activity-feed></app-activity-feed>
-    </div>
 
+    <div class="max-w-7xl mx-auto px-6 pt-8 pb-12 flex flex-col gap-10">
+        <!-- Header Section -->
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+            <div>
+                <h1 class="text-3xl font-extrabold tracking-tight text-neutral-900 dark:text-white">
+                    Dashboard
+                </h1>
+                <p class="text-sm text-neutral-500 dark:text-neutral-400 mt-2 font-medium">
+                    Welcome back, here's what's happening with your courses today.
+                </p>
+            </div>
+            
+            <button class="px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold rounded-xl shadow-[0_4px_14px_0_rgba(37,99,235,0.39)] transition-colors flex items-center gap-2 w-fit">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clip-rule="evenodd" />
+                </svg>
+                New Task
+            </button>
+        </div>
+
+        <!-- Stats Overview -->
+        <div>
+            <app-stats-card></app-stats-card>
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="grid grid-cols-1 xl:grid-cols-3 gap-8">
+            <!-- Left Column: Courses & Tasks (Spans 2 columns) -->
+            <div class="xl:col-span-2 flex flex-col gap-8">
+                <app-course-cards></app-course-cards>
+                <div class="h-full">
+                    <app-task-section></app-task-section>
+                </div>
+            </div>
+            
+            <!-- Right Column: Activity Feed -->
+            <div class="xl:col-span-1 h-full">
+                <app-activity-feed></app-activity-feed>
+            </div>
+        </div>
+    </div>
 </div>
