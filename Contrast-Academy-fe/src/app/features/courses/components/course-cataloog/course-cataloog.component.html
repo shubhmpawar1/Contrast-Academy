@@ -2,100 +2,42 @@
 
     <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
+        @for (course of courses; track course.title) {
         <!-- Card -->
         <div class="group rounded-2xl border border-white/10 bg-[#0F172A]
-                p-6 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                p-6 transition-all duration-300 hover:shadow-[0_8px_30px_rgba(255,255,255,0.05)] hover:-translate-y-1">
 
             <!-- Icon -->
             <div class="w-14 h-14 flex items-center justify-center rounded-xl
-                  bg-[#111C33] mb-5">
-                📄
+                  bg-[#111C33] mb-5 text-2xl group-hover:scale-110 transition-transform">
+                {{ course.icon }}
             </div>
 
             <!-- Title -->
-            <h3 class="text-lg font-semibold text-white">
-                HTML Mastery Course
+            <h3 class="text-lg font-bold text-white tracking-wide">
+                {{ course.title }}
             </h3>
 
             <!-- Description -->
-            <p class="text-sm text-white/60 mt-2 leading-relaxed">
-                Master the backbone of the web with our multi-level curriculum.
+            <p class="text-sm text-white/60 mt-2 leading-relaxed h-[42px]">
+                {{ course.description }}
             </p>
 
             <!-- Badge -->
-            <span class="inline-block mt-4 text-xs font-medium px-3 py-1 rounded-full
-                   bg-green-500/10 text-green-400">
-                AVAILABLE NOW
+            <span class="inline-block mt-5 text-[10px] font-bold tracking-widest px-3 py-1.5 rounded-full
+                   bg-green-500/10 text-green-400 border border-green-500/20 uppercase">
+                {{ course.badge }}
             </span>
 
             <!-- Button -->
-            <button class="mt-6 w-full py-2.5 rounded-lg text-sm font-medium
-               bg-gradient-to-r from-blue-500 to-blue-600 text-white
-               hover:opacity-90 transition">
-                Start Learning 🎯
+            <button class="mt-6 w-full py-3 rounded-xl text-sm font-bold
+               bg-gradient-to-r from-blue-500 to-blue-600 text-white shadow-[0_0_15px_rgba(59,130,246,0.3)]
+               hover:from-blue-600 hover:to-blue-700 hover:shadow-[0_0_20px_rgba(59,130,246,0.5)] transition duration-300">
+                {{ course.buttonText }}
             </button>
 
         </div>
-
-        <!-- Card -->
-        <div class="group rounded-2xl border border-white/10 bg-[#0F172A]
-                p-6 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
-
-            <div class="w-14 h-14 flex items-center justify-center rounded-xl
-                  bg-[#111C33] mb-5">
-                🎨
-            </div>
-
-            <h3 class="text-lg font-semibold text-white">
-                CSS (Styling + Layout Mastery)
-            </h3>
-
-            <p class="text-sm text-white/60 mt-2 leading-relaxed">
-                Learn to style, layout, and animate beautiful responsive websites.
-            </p>
-
-            <span class="inline-block mt-4 text-xs font-medium px-3 py-1 rounded-full
-                   bg-green-500/10 text-green-400">
-                AVAILABLE NOW
-            </span>
-
-            <button class="mt-6 w-full py-2.5 rounded-lg text-sm font-medium
-               bg-gradient-to-r from-blue-500 to-blue-600 text-white
-               hover:opacity-90 transition">
-                Start Learning 🎯
-            </button>
-
-        </div>
-
-        <!-- Card -->
-        <div class="group rounded-2xl border border-white/10 bg-[#0F172A]
-                p-6 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
-
-            <div class="w-14 h-14 flex items-center justify-center rounded-xl
-                  bg-[#111C33] mb-5">
-                ⚡
-            </div>
-
-            <h3 class="text-lg font-semibold text-white">
-                JavaScript (Frontend + Core)
-            </h3>
-
-            <p class="text-sm text-white/60 mt-2 leading-relaxed">
-                Become a pro at logic, DOM manipulation, and building interactive apps.
-            </p>
-
-            <span class="inline-block mt-4 text-xs font-medium px-3 py-1 rounded-full
-                   bg-green-500/10 text-green-400">
-                AVAILABLE NOW
-            </span>
-
-            <button class="mt-6 w-full py-2.5 rounded-lg text-sm font-medium
-               bg-gradient-to-r from-blue-500 to-blue-600 text-white
-               hover:opacity-90 transition">
-                Start Learning 🎯
-            </button>
-
-        </div>
+        }
 
     </div>
 
