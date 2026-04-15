@@ -8,5 +8,9 @@ export const routes: Routes = [
     },
     {
         path: 'courses', component: CoursePageComponent
-    }
+    },
+    {
+        path: 'dashboard', component: DashboardPageComponent
+    },
+
 ];

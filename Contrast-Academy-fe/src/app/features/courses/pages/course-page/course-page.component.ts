@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { LeftSidebarComponent } from "../../components/left-sidebar/left-sidebar.component";
+import { NavbarComponent } from '../../../../layout/navbar/navbar/navbar.component';
 
 @Component({
   selector: 'app-course-page',
   standalone: true,
-  imports: [LeftSidebarComponent],
+  imports: [NavbarComponent],
   templateUrl: './course-page.component.html',
   styleUrl: './course-page.component.css'
 })
