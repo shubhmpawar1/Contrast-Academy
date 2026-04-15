@@ -1,98 +1,117 @@
 <div>
 
-    <!-- Title -->
-    <h2 class="text-lg font-semibold text-black dark:text-white mb-4">
-        Task Management
-    </h2>
+    <!-- Header -->
+    <div class="flex items-center justify-between mb-4">
+        <h2 class="text-lg font-semibold text-black dark:text-white">
+            Task Management
+        </h2>
+        <span class="text-xs text-black/40 dark:text-white/40">
+            6 Tasks
+        </span>
+    </div>
 
     <!-- Grid -->
     <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
 
-        <!-- 🟡 In Progress -->
+        <!-- In Progress -->
         <div class="rounded-xl border border-black/10 bg-white px-4 py-3
                 dark:bg-black dark:border-white/10">
 
-            <h3 class="text-xs font-semibold uppercase tracking-wide text-black/60 dark:text-white/60 mb-3">
+            <h3 class="text-[11px] font-semibold uppercase tracking-wide text-black/50 dark:text-white/50 mb-3">
                 In Progress
             </h3>
 
             <div class="space-y-2">
 
-                <div class="px-3 py-2 rounded-md border border-black/10
+                <div class="flex items-start gap-2 px-3 py-2 rounded-md border border-black/10
                     dark:border-white/10 hover:bg-black/5 dark:hover:bg-white/5 transition">
-                    <p class="text-sm font-medium text-black dark:text-white">
-                        Build Dashboard UI
-                    </p>
-                    <p class="text-[11px] text-black/50 dark:text-white/50">
-                        Angular
-                    </p>
+                    <span class="w-1.5 h-1.5 mt-2 rounded-full bg-black dark:bg-white"></span>
+                    <div>
+                        <p class="text-sm font-medium text-black dark:text-white">
+                            Build Dashboard UI
+                        </p>
+                        <p class="text-[11px] text-black/50 dark:text-white/50">
+                            Angular
+                        </p>
+                    </div>
                 </div>
 
-                <div class="px-3 py-2 rounded-md border border-black/10
+                <div class="flex items-start gap-2 px-3 py-2 rounded-md border border-black/10
                     dark:border-white/10 hover:bg-black/5 dark:hover:bg-white/5 transition">
-                    <p class="text-sm font-medium text-black dark:text-white">
-                        API Integration
-                    </p>
-                    <p class="text-[11px] text-black/50 dark:text-white/50">
-                        Node.js
-                    </p>
+                    <span class="w-1.5 h-1.5 mt-2 rounded-full bg-black dark:bg-white"></span>
+                    <div>
+                        <p class="text-sm font-medium text-black dark:text-white">
+                            API Integration
+                        </p>
+                        <p class="text-[11px] text-black/50 dark:text-white/50">
+                            Node.js
+                        </p>
+                    </div>
                 </div>
 
             </div>
         </div>
 
-        <!-- 🔴 Due Tasks -->
+        <!-- Due -->
         <div class="rounded-xl border border-black/10 bg-white px-4 py-3
                 dark:bg-black dark:border-white/10">
 
-            <h3 class="text-xs font-semibold uppercase tracking-wide text-black/60 dark:text-white/60 mb-3">
+            <h3 class="text-[11px] font-semibold uppercase tracking-wide text-black/50 dark:text-white/50 mb-3">
                 Due
             </h3>
 
             <div class="space-y-2">
 
-                <div class="px-3 py-2 rounded-md border border-black/10
+                <div class="flex items-start gap-2 px-3 py-2 rounded-md border border-black/10
                     dark:border-white/10 hover:bg-black/5 dark:hover:bg-white/5 transition">
-                    <p class="text-sm font-medium text-black dark:text-white">
-                        Submit Assignment
-                    </p>
-                    <p class="text-[11px] text-black/50 dark:text-white/50">
-                        Today
-                    </p>
+                    <span class="w-1.5 h-1.5 mt-2 rounded-full bg-black dark:bg-white"></span>
+                    <div>
+                        <p class="text-sm font-medium text-black dark:text-white">
+                            Submit Assignment
+                        </p>
+                        <p class="text-[11px] text-black/50 dark:text-white/50">
+                            Today
+                        </p>
+                    </div>
                 </div>
 
-                <div class="px-3 py-2 rounded-md border border-black/10
+                <div class="flex items-start gap-2 px-3 py-2 rounded-md border border-black/10
                     dark:border-white/10 hover:bg-black/5 dark:hover:bg-white/5 transition">
-                    <p class="text-sm font-medium text-black dark:text-white">
-                        Fix Bugs
-                    </p>
-                    <p class="text-[11px] text-black/50 dark:text-white/50">
-                        Tomorrow
-                    </p>
+                    <span class="w-1.5 h-1.5 mt-2 rounded-full bg-black dark:bg-white"></span>
+                    <div>
+                        <p class="text-sm font-medium text-black dark:text-white">
+                            Fix Bugs
+                        </p>
+                        <p class="text-[11px] text-black/50 dark:text-white/50">
+                            Tomorrow
+                        </p>
+                    </div>
                 </div>
 
             </div>
         </div>
 
-        <!-- ⚪ Pending -->
+        <!-- Pending -->
         <div class="rounded-xl border border-black/10 bg-white px-4 py-3
                 dark:bg-black dark:border-white/10">
 
-            <h3 class="text-xs font-semibold uppercase tracking-wide text-black/60 dark:text-white/60 mb-3">
+            <h3 class="text-[11px] font-semibold uppercase tracking-wide text-black/50 dark:text-white/50 mb-3">
                 Pending
             </h3>
 
             <div class="space-y-2">
 
-                <div class="px-3 py-2 rounded-md border border-black/10
+                <div class="flex items-start gap-2 px-3 py-2 rounded-md border border-black/10
                     dark:border-white/10 hover:bg-black/5 dark:hover:bg-white/5 transition">
+                    <span class="w-1.5 h-1.5 mt-2 rounded-full bg-black dark:bg-white"></span>
                     <p class="text-sm font-medium text-black dark:text-white">
                         Start React Course
                     </p>
                 </div>
 
-                <div class="px-3 py-2 rounded-md border border-black/10
+                <div class="flex items-start gap-2 px-3 py-2 rounded-md border border-black/10
                     dark:border-white/10 hover:bg-black/5 dark:hover:bg-white/5 transition">
+                    <span class="w-1.5 h-1.5 mt-2 rounded-full bg-black dark:bg-white"></span>
                     <p class="text-sm font-medium text-black dark:text-white">
                         Watch Node.js Videos
                     </p>
