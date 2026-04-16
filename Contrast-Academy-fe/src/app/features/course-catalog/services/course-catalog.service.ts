@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 
 export interface CourseCatalogItem {
+  id: string;
   icon: string;
   title: string;
   description: string;
@@ -16,6 +17,7 @@ export class CourseCatalogService {
   getCourses(): CourseCatalogItem[] {
     return [
       {
+        id: 'html',
         icon: '📄',
         title: 'HTML Mastery Course',
         description: 'Master the backbone of the web with our multi-level curriculum.',
@@ -23,6 +25,7 @@ export class CourseCatalogService {
         buttonText: 'Start Learning 🎯'
       },
       {
+        id: 'css',
         icon: '🎨',
         title: 'CSS (Styling + Layout Mastery)',
         description: 'Learn to style, layout, and animate beautiful responsive websites.',
@@ -30,6 +33,7 @@ export class CourseCatalogService {
         buttonText: 'Start Learning 🎯'
       },
       {
+        id: 'javascript',
         icon: '⚡',
         title: 'JavaScript (Frontend + Core)',
         description: 'Become a pro at logic, DOM manipulation, and building interactive apps.',
@@ -37,6 +41,7 @@ export class CourseCatalogService {
         buttonText: 'Start Learning 🎯'
       },
       {
+        id: 'angular',
         icon: '⚡',
         title: 'Angular Framework',
         description: 'Build scalable, enterprise-grade web apps with Angular.',

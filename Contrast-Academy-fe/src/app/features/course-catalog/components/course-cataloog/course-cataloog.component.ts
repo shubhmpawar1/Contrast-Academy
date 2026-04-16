@@ -1,5 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 import { CourseCatalogService, CourseCatalogItem } from '../../services/course-catalog.service';
 
 @Component({
@@ -10,10 +11,15 @@ import { CourseCatalogService, CourseCatalogItem } from '../../services/course-c
   styleUrl: './course-cataloog.component.css'
 })
 export class CourseCataloogComponent {
+  private router = inject(Router);
   courseCatalogService = inject(CourseCatalogService);
   courses: CourseCatalogItem[] = this.courseCatalogService.getCourses();
 
   trackByTitle(index: number, course: CourseCatalogItem): string {
     return course.title;
+  }
+
+  goToCourse(id: string): void {
+    this.router.navigate(['/course', id]);
   }
 }
