@@ -12,4 +12,8 @@ import { CourseCatalogService, CourseCatalogItem } from '../../services/course-c
 export class CourseCataloogComponent {
   courseCatalogService = inject(CourseCatalogService);
   courses: CourseCatalogItem[] = this.courseCatalogService.getCourses();
+
+  trackByTitle(index: number, course: CourseCatalogItem): string {
+    return course.title;
+  }
 }

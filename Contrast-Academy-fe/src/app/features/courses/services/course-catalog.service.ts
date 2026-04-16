@@ -35,6 +35,13 @@ export class CourseCatalogService {
         description: 'Become a pro at logic, DOM manipulation, and building interactive apps.',
         badge: 'AVAILABLE NOW',
         buttonText: 'Start Learning 🎯'
+      },
+      {
+        icon: '⚡',
+        title: 'Angular Framework',
+        description: 'Build scalable, enterprise-grade web apps with Angular.',
+        badge: 'AVAILABLE NOW',
+        buttonText: 'Start Learning 🎯'
       }
     ];
   }

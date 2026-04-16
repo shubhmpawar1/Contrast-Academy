@@ -2,9 +2,8 @@
 
     <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-        @for (course of courses; track course.title) {
         <!-- Card -->
-        <div class="group rounded-2xl border border-white/10 bg-[#0F172A]
+        <div *ngFor="let course of courses; trackBy: trackByTitle" class="group rounded-2xl border border-white/10 bg-[#0F172A]
                 p-6 transition-all duration-300 hover:shadow-[0_8px_30px_rgba(255,255,255,0.05)] hover:-translate-y-1">
 
             <!-- Icon -->
@@ -37,7 +36,6 @@
             </button>
 
         </div>
-        }
 
     </div>
 
