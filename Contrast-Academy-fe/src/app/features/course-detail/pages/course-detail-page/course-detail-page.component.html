@@ -1,13 +1,14 @@
 <div class="min-h-screen bg-[#0B1220] px-6 py-10" *ngIf="course">
 
     <!-- Back Button -->
-    <div class="max-w-5xl mx-auto mb-8">
+    <!-- <div class="max-w-5xl mx-auto mb-8">
         <button (click)="goBack()"
             class="flex items-center gap-2 text-sm text-white/50 hover:text-white transition-colors duration-200">
             <span class="text-lg">←</span>
             <span>Back to Courses</span>
         </button>
-    </div>
+    </div> -->
+    <app-navbar></app-navbar>
 
     <!-- Hero Section -->
     <app-course-detail-hero-section [course]="course"></app-course-detail-hero-section>
