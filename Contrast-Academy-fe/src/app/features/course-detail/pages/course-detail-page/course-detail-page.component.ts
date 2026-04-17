@@ -2,11 +2,12 @@ import { Component, inject, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CourseDetailService, CourseDetail } from '../../services/course-detail.service';
+import { CourseDetailHeroSectionComponent } from '../../componet/course-detail-hero-section/course-detail-hero-section.component';
 
 @Component({
   selector: 'app-course-detail-page',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, CourseDetailHeroSectionComponent],
   templateUrl: './course-detail-page.component.html',
   styleUrl: './course-detail-page.component.css'
 })
