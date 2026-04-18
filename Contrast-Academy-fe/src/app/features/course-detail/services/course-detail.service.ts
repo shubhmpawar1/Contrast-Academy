@@ -260,6 +260,10 @@ export class CourseDetailService {
     }
   };
 
+  getAllCourses(): CourseDetail[] {
+    return Object.values(this.courses);
+  }
+
   getCourseById(id: string): CourseDetail | undefined {
     return this.courses[id];
   }
