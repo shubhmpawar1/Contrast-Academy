@@ -1,5 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 import { CourseDetail } from '../../services/course-detail.service';
 
 
@@ -11,5 +12,13 @@ import { CourseDetail } from '../../services/course-detail.service';
   styleUrl: './course-detail-modules-section.component.css'
 })
 export class CourseDetailModulesSectionComponent {
+  private router = inject(Router);
+
   @Input() course!: CourseDetail;
+
+  goToLesson(lesson: string): void {
+    // In a real app, you'd map the lesson title to an ID. 
+    // Here we'll navigate to our sample flexbox lesson.
+    this.router.navigate(['/lesson', 'flexbox-intro']);
+  }
 }
