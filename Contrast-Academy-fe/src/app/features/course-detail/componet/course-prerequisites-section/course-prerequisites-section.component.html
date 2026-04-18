@@ -1,0 +1,12 @@
+<div class="max-w-5xl mx-auto mb-8">
+    <h2 class="text-2xl font-bold text-white mb-6 tracking-wide">✅ Prerequisites</h2>
+
+    <div class="rounded-2xl border border-white/10 bg-[#0F172A] p-6">
+        <ul class="space-y-3">
+            <li *ngFor="let prereq of course.prerequisites" class="flex items-center gap-3 text-white/70">
+                <span class="w-2 h-2 rounded-full bg-green-400 shrink-0"></span>
+                {{ prereq }}
+            </li>
+        </ul>
+    </div>
+</div>
