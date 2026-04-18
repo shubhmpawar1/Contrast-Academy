@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { CourseDetail } from '../../services/course-detail.service';
 
 @Component({
   selector: 'app-course-enroll-cta',
@@ -7,6 +8,6 @@ import { Component } from '@angular/core';
   templateUrl: './course-enroll-cta.component.html',
   styleUrl: './course-enroll-cta.component.css'
 })
-export class CourseEnrollCTAComponent {
-
+export class CourseEnrollCtaComponent {
+  @Input() course!: CourseDetail;
 }

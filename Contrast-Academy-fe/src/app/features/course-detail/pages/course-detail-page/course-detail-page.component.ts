@@ -5,6 +5,7 @@ import { CourseDetailService, CourseDetail } from '../../services/course-detail.
 import { CourseDetailHeroSectionComponent } from '../../componet/course-detail-hero-section/course-detail-hero-section.component';
 import { CourseDetailModulesSectionComponent } from '../../componet/course-detail-modules-section/course-detail-modules-section.component';
 import { CoursePrerequisitesSectionComponent } from '../../componet/course-prerequisites-section/course-prerequisites-section.component';
+import { CourseEnrollCtaComponent } from '../../componet/course-enroll-cta/course-enroll-cta.component';
 import { NavbarComponent } from "../../../../layout/navbar/navbar/navbar.component";
 
 @Component({
@@ -15,6 +16,7 @@ import { NavbarComponent } from "../../../../layout/navbar/navbar/navbar.compone
     CourseDetailHeroSectionComponent, 
     CourseDetailModulesSectionComponent, 
     CoursePrerequisitesSectionComponent,
+    CourseEnrollCtaComponent,
     NavbarComponent
   ],
   templateUrl: './course-detail-page.component.html',

@@ -17,6 +17,7 @@ export interface CourseDetail {
   totalLessons: number;
   modules: CourseModule[];
   prerequisites: string[];
+  ctaText: string;
 }
 
 @Injectable({
@@ -41,7 +42,8 @@ export class CourseDetailService {
         { title: 'Tables & Media', description: 'Working with tables, images, audio, and video', lessons: 5 },
         { title: 'Projects & Practice', description: 'Build real-world HTML pages from scratch', lessons: 5 }
       ],
-      prerequisites: ['No prior experience needed', 'A computer with a text editor', 'Curiosity to learn!']
+      prerequisites: ['No prior experience needed', 'A computer with a text editor', 'Curiosity to learn!'],
+      ctaText: 'Start Learning HTML Now 🚀'
     },
     'css': {
       id: 'css',
@@ -60,7 +62,8 @@ export class CourseDetailService {
         { title: 'Animations & Transitions', description: 'Bring your UI to life with CSS animations', lessons: 7 },
         { title: 'Projects', description: 'Build responsive websites from Figma designs', lessons: 5 }
       ],
-      prerequisites: ['Basic understanding of HTML', 'Familiarity with browser DevTools']
+      prerequisites: ['Basic understanding of HTML', 'Familiarity with browser DevTools'],
+      ctaText: 'Master CSS Layouts Now 🎨'
     },
     'javascript': {
       id: 'javascript',
@@ -80,7 +83,8 @@ export class CourseDetailService {
         { title: 'OOP in JavaScript', description: 'Prototypes, classes, and design patterns', lessons: 8 },
         { title: 'Projects', description: 'Build interactive apps: Todo, Quiz, Weather App', lessons: 8 }
       ],
-      prerequisites: ['Basic HTML & CSS knowledge', 'Logical thinking ability']
+      prerequisites: ['Basic HTML & CSS knowledge', 'Logical thinking ability'],
+      ctaText: 'Become a JS Expert Now ⚡'
     },
     'angular': {
       id: 'angular',
@@ -100,7 +104,8 @@ export class CourseDetailService {
         { title: 'State Management', description: 'Managing state with NgRx and signals', lessons: 8 },
         { title: 'Projects', description: 'Build a full-stack dashboard application', lessons: 10 }
       ],
-      prerequisites: ['Strong JavaScript/TypeScript knowledge', 'HTML & CSS proficiency', 'Understanding of REST APIs']
+      prerequisites: ['Strong JavaScript/TypeScript knowledge', 'HTML & CSS proficiency', 'Understanding of REST APIs'],
+      ctaText: 'Build with Angular Today 🅰️'
     }
   };
 
