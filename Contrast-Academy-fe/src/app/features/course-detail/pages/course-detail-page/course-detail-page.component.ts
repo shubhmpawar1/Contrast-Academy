@@ -30,15 +30,17 @@ export class CourseDetailPageComponent implements OnInit {
   course: CourseDetail | undefined;
 
   ngOnInit(): void {
-    const id = this.route.snapshot.paramMap.get('id');
-    if (id) {
-      this.course = this.courseDetailService.getCourseById(id);
-    }
+    this.route.paramMap.subscribe(params => {
+      const id = params.get('id');
+      if (id) {
+        this.course = this.courseDetailService.getCourseById(id);
+      }
 
-    // If course not found, navigate back to courses page
-    if (!this.course) {
-      this.router.navigate(['/courses']);
-    }
+      // If course not found, navigate back to courses page
+      if (!this.course) {
+        this.router.navigate(['/courses']);
+      }
+    });
   }
 
   goBack(): void {
