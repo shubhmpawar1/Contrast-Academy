@@ -2,9 +2,10 @@
     <h2 class="text-2xl font-bold text-white mb-6 tracking-wide">📚 Course Modules</h2>
 
     <div class="space-y-4">
-        <div *ngFor="let module of course.modules; let i = index" class="rounded-2xl border border-white/10 bg-[#0F172A] p-6
-                            hover:border-blue-500/30 hover:shadow-[0_4px_20px_rgba(59,130,246,0.1)]
-                            transition-all duration-300">
+        <div *ngFor="let module of course.modules; let i = index" 
+             class="group rounded-2xl border border-white/10 bg-[#0F172A] p-6
+                    hover:border-blue-500/30 hover:shadow-[0_4px_20px_rgba(59,130,246,0.1)]
+                    transition-all duration-300 cursor-pointer">
             <div class="flex items-start gap-4">
                 <!-- Module Number -->
                 <div class="w-10 h-10 flex items-center justify-center rounded-full
@@ -14,8 +15,22 @@
                 </div>
                 <!-- Module Details -->
                 <div class="flex-1">
-                    <h3 class="text-lg font-bold text-white">{{ module.title }}</h3>
+                    <h3 class="text-lg font-bold text-white group-hover:text-blue-400 transition-colors duration-300">
+                        {{ module.title }}
+                    </h3>
                     <p class="text-sm text-white/50 mt-1">{{ module.description }}</p>
+
+                    <!-- Lesson List (Revealed on Hover) -->
+                    <div class="mt-4 space-y-2 overflow-hidden max-h-0 opacity-0 
+                                group-hover:max-h-48 group-hover:opacity-100 
+                                transition-all duration-500 ease-in-out">
+                        <div class="h-px bg-white/5 mb-3"></div>
+                        <div *ngFor="let lesson of module.lessonList" 
+                             class="flex items-center gap-3 text-sm text-white/40 hover:text-white/70 transition-colors duration-200">
+                            <span class="w-1.5 h-1.5 rounded-full bg-blue-500/50"></span>
+                            {{ lesson }}
+                        </div>
+                    </div>
                 </div>
                 <!-- Lessons Count -->
                 <span class="text-xs font-bold text-blue-400 bg-blue-500/10 px-3 py-1.5
