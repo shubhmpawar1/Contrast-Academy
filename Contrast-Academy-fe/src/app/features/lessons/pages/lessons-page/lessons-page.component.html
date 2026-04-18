@@ -27,16 +27,7 @@
         </div>
 
         <!-- Navigation -->
-        <div class="flex justify-between items-center pt-10 border-t border-white/5">
-            <button
-                class="px-6 py-3 text-slate-400 hover:text-white transition-colors flex items-center gap-2 font-medium">
-                <span>←</span> Previous
-            </button>
-            <button
-                class="px-8 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-sm transition-all">
-                Next Lesson <span>→</span>
-            </button>
-        </div>
+        <app-lessons-prv-next-button [currentLessonId]="lesson.id"></app-lessons-prv-next-button>
 
     </div>
 </div>

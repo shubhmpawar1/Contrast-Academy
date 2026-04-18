@@ -7,6 +7,7 @@ import { LessonsVideoSectionComponent } from '../../component/lessons-video-sect
 import { LessonDescriptionComponent } from '../../component/lesson-description/lesson-description.component';
 import { LessonTaskComponent } from '../../component/lesson-task/lesson-task.component';
 import { LessonsQuickQuizComponent } from '../../component/lessons-quick-quiz/lessons-quick-quiz.component';
+import { LessonsPrvNextButtonComponent } from '../lessons-prv-next-button/lessons-prv-next-button.component';
 
 @Component({
   selector: 'app-lessons-page',
@@ -17,7 +18,8 @@ import { LessonsQuickQuizComponent } from '../../component/lessons-quick-quiz/le
     LessonsVideoSectionComponent, 
     LessonDescriptionComponent,
     LessonTaskComponent,
-    LessonsQuickQuizComponent
+    LessonsQuickQuizComponent,
+    LessonsPrvNextButtonComponent
   ],
   templateUrl: './lessons-page.component.html',
   styleUrl: './lessons-page.component.css'

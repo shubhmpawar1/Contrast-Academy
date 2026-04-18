@@ -159,7 +159,31 @@ export class LessonsService {
     }
   };
 
+  private lessonOrder: string[] = [
+    'flexbox-layout',
+    'what-is-html',
+    'first-html-page',
+    'basic-tags',
+    'input-types',
+    'form-validation',
+    'labels-fieldsets',
+    'header-footer',
+    'articles-sections',
+    'aside-nav',
+    'let-const'
+  ];
+
   getLessonById(id: string): LessonContent | undefined {
     return this.lessons[id];
+  }
+
+  getPreviousLessonId(id: string): string | null {
+    const index = this.lessonOrder.indexOf(id);
+    return index > 0 ? this.lessonOrder[index - 1] : null;
+  }
+
+  getNextLessonId(id: string): string | null {
+    const index = this.lessonOrder.indexOf(id);
+    return index !== -1 && index < this.lessonOrder.length - 1 ? this.lessonOrder[index + 1] : null;
   }
 }
