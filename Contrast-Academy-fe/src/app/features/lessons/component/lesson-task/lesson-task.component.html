@@ -1,9 +1,57 @@
-<div class="bg-slate-900/50 border border-white/5 rounded-2xl p-8 space-y-4 shadow-xl">
-    <div class="flex items-center gap-3 mb-2">
-        <span class="text-2xl">✅</span>
-        <h2 class="text-xl font-bold text-white">Practice Task</h2>
+<div class="bg-slate-900/50 border border-white/5 rounded-2xl p-8 shadow-xl relative overflow-hidden group">
+
+    <!-- Top Header -->
+    <div class="flex justify-between items-start gap-4 mb-6 relative z-10">
+        <div class="flex items-center gap-3">
+            <span class="text-2xl">💻</span>
+            <h2 class="text-xl font-bold text-white">Practice Task</h2>
+        </div>
+
+        <!-- Timer Badge -->
+        <div class="flex items-center bg-black/40 rounded-full p-1 pr-4 border border-white/10 transition-colors"
+            [ngClass]="isTimerRunning ? 'border-blue-500/50 shadow-[0_0_15px_rgba(59,130,246,0.3)]' : ''">
+
+            <button (click)="toggleTimer()"
+                class="w-8 h-8 flex justify-center items-center rounded-full bg-blue-600 hover:bg-blue-500 text-white transition-all mr-3 active:scale-95 text-xs">
+                <span *ngIf="!isTimerRunning">▶</span>
+                <span *ngIf="isTimerRunning">⏸</span>
+            </button>
+
+            <div class="font-mono text-sm tracking-wider font-bold w-12 text-center"
+                [ngClass]="isTimerRunning ? 'text-blue-400' : 'text-slate-400'">
+                {{ formattedTime }}
+            </div>
+
+            <!-- Reset Button
+            <button *ngIf="timeElapsed > 0" (click)="resetTimer()"
+                class="ml-3 text-slate-500 hover:text-red-400 transition-colors"
+                title="Reset Timer">
+                ⟲
+            </button> -->
+        </div>
     </div>
-    <p class="text-slate-300 leading-relaxed">
-        {{ lesson.task }}
-    </p>
+
+    <!-- Content Segment -->
+    <div class="relative z-10">
+        <p class="text-slate-300 leading-relaxed text-base">
+            {{ lesson.task }}
+        </p>
+
+        <!-- Timer Helper Text -->
+        <div *ngIf="!isTimerRunning && timeElapsed === 0"
+            class="mt-6 text-sm text-blue-400/80 font-semibold flex items-center gap-2 animate-pulse">
+            👆 Click the play button when you're ready to start coding!
+        </div>
+        <div *ngIf="isTimerRunning" class="mt-6 text-sm text-green-400/80 font-semibold flex items-center gap-2">
+            ⏱ You're on the clock. Focus and get it done!
+        </div>
+        <div *ngIf="!isTimerRunning && timeElapsed > 0"
+            class="mt-6 text-sm text-slate-400 font-semibold flex items-center gap-2">
+            ⏸ Timer paused. Ready to resume?
+        </div>
+    </div>
+
+    <!-- Active Timer Background Glow -->
+    <div class="absolute inset-0 bg-blue-500/5 opacity-0 transition-opacity duration-1000 z-0 pointer-events-none"
+        [ngClass]="isTimerRunning ? 'opacity-100' : ''"></div>
 </div>
