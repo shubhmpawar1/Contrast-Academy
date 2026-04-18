@@ -17,8 +17,13 @@ export class CourseDetailModulesSectionComponent {
   @Input() course!: CourseDetail;
 
   goToLesson(lesson: string): void {
-    // In a real app, you'd map the lesson title to an ID. 
-    // Here we'll navigate to our sample flexbox lesson.
-    this.router.navigate(['/lesson', 'flexbox-intro']);
+    // Generate a URL-friendly slug from the lesson title
+    const slug = lesson
+      .toLowerCase()
+      .replace(/ & /g, '-')
+      .replace(/ /g, '-')
+      .replace(/\?/g, '');
+      
+    this.router.navigate(['/lesson', slug]);
   }
 }

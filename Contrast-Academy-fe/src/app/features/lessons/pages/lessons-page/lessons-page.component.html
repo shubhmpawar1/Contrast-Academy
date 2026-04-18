@@ -2,7 +2,10 @@
     <app-navbar></app-navbar>
 
     <div class="max-w-5xl mx-auto px-4 pt-10 space-y-10">
-        <h1>Course name</h1>
+        <div class="space-y-2">
+            <p class="text-blue-400 text-sm font-bold tracking-widest uppercase">Now Playing</p>
+            <h1 class="text-2xl md:text-3xl font-bold text-white">{{ lesson.title }}</h1>
+        </div>
 
         <!-- 🔹 VIDEO SECTION -->
         <app-lessons-video-section [videoUrl]="lesson.videoUrl"></app-lessons-video-section>
@@ -11,14 +14,7 @@
             <!-- Left Side: Content -->
             <div class="lg:col-span-2 space-y-10">
                 <!-- Lesson Info -->
-                <div class="space-y-4">
-                    <h1 class="text-3xl md:text-4xl font-extrabold text-white tracking-tight">
-                        {{ lesson.title }}
-                    </h1>
-                    <p class="text-slate-400 leading-relaxed text-base md:text-lg">
-                        {{ lesson.description }}
-                    </p>
-                </div>
+                <app-lesson-description [lesson]="lesson"></app-lesson-description>
 
                 <!-- Practice Task -->
                 <div class="bg-slate-900/50 border border-white/5 rounded-2xl p-8 space-y-4 shadow-xl">
