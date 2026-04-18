@@ -187,30 +187,67 @@ export class CourseDetailService {
       totalLessons: 64,
       modules: [
         {
-          title: 'JS Fundamentals',
-          description: 'Variables, data types, operators, and control flow',
+          title: 'JavaScript Fundamentals',
+          description: 'Learn core syntax, variables, and data types',
           lessons: [
+            { id: 'what-is-javascript', title: 'What is JavaScript?' },
             { id: 'let-const', title: 'Let & Const' },
-            { id: 'conditional-logic', title: 'Conditional Logic' },
-            { id: 'loops-iteration', title: 'Loops & Iteration' }
+            { id: 'data-types', title: 'Data Types' },
+            { id: 'operators', title: 'Operators' }
           ]
         },
+
         {
-          title: 'Functions & Scope',
-          description: 'Functions, closures, hoisting, and scope chains',
+          title: 'Control Flow',
+          description: 'Decision making and loops in JavaScript',
           lessons: [
-            { id: 'arrow-functions', title: 'Arrow Functions' },
-            { id: 'higher-order-functions', title: 'Higher Order Functions' },
-            { id: 'lexical-scope', title: 'Lexical Scope' }
+            { id: 'conditionals', title: 'Conditionals' },
+            { id: 'loops', title: 'Loops' }
           ]
         },
+
         {
-          title: 'DOM Manipulation',
-          description: 'Select, modify, and interact with the DOM',
+          title: 'Functions',
+          description: 'Reusable logic and modern syntax',
           lessons: [
-            { id: 'query-selectors', title: 'Query Selectors' },
-            { id: 'event-listeners', title: 'Event Listeners' },
-            { id: 'dynamic-content', title: 'Dynamic Content' }
+            { id: 'functions', title: 'Functions' },
+            { id: 'arrow-functions', title: 'Arrow Functions' }
+          ]
+        },
+
+        {
+          title: 'Data Structures',
+          description: 'Work with arrays and objects',
+          lessons: [
+            { id: 'arrays', title: 'Arrays' },
+            { id: 'objects', title: 'Objects' }
+          ]
+        },
+
+        {
+          title: 'DOM & Events',
+          description: 'Interact with web pages dynamically',
+          lessons: [
+            { id: 'dom-basics', title: 'DOM Basics' },
+            { id: 'events', title: 'Events' }
+          ]
+        },
+
+        {
+          title: 'Asynchronous JavaScript',
+          description: 'Handle async operations and APIs',
+          lessons: [
+            { id: 'async-js', title: 'Async JavaScript' },
+            { id: 'fetch-api', title: 'Fetch API' }
+          ]
+        },
+
+        {
+          title: 'Advanced JavaScript',
+          description: 'Modern JS and deep concepts',
+          lessons: [
+            { id: 'es6-features', title: 'ES6 Features' },
+            { id: 'closures', title: 'Closures' }
           ]
         }
       ],

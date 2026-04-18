@@ -466,18 +466,236 @@ export class LessonsService {
       task: 'Add viewport and description meta tags to your page.'
     },
     // JavaScript Lessons
+    // 🔰 BASICS
+    'what-is-javascript': {
+      id: 'what-is-javascript',
+      title: 'What is JavaScript?',
+      description: 'Understand the role of JavaScript in web development and how it enables interactivity in web pages.',
+      videoUrl: 'https://www.youtube.com/embed/W6NZfCO5SIk',
+      quiz: {
+        question: 'What is JavaScript mainly used for?',
+        options: [
+          'Styling web pages',
+          'Structuring content',
+          'Adding interactivity',
+          'Database management'
+        ],
+        correctAnswer: 'Adding interactivity'
+      },
+      task: 'Write a simple script that shows an alert message in the browser.'
+    },
+
     'let-const': {
       id: 'let-const',
       title: 'Let & Const',
-      description: 'Deep dive into variable declarations in modern JavaScript, focusing on block scope and immutability.',
+      description: 'Understand block scope, reassignment, and best practices for variable declaration.',
       videoUrl: 'https://www.youtube.com/embed/PjH6Cg_9O6E',
       quiz: {
         question: 'Which keyword is used for constants?',
         options: ['const', 'let', 'var', 'static'],
         correctAnswer: 'const'
       },
-      task: 'Declare a constant variable and try to reassign it in the console to see the error.'
+      task: 'Declare variables using let and const, and test reassignment behavior.'
+    },
+
+    'data-types': {
+      id: 'data-types',
+      title: 'Data Types',
+      description: 'Explore primitive and reference data types in JavaScript.',
+      videoUrl: 'https://www.youtube.com/embed/edlFjlzxkSI',
+      quiz: {
+        question: 'Which is NOT a primitive type?',
+        options: ['Object', 'String', 'Number', 'Boolean'],
+        correctAnswer: 'Object'
+      },
+      task: 'Create variables for each primitive type and log their typeof.'
+    },
+
+    'operators': {
+      id: 'operators',
+      title: 'Operators',
+      description: 'Learn arithmetic, comparison, and logical operators.',
+      videoUrl: 'https://www.youtube.com/embed/IsG4Xd6LlsM',
+      quiz: {
+        question: 'Which operator checks strict equality?',
+        options: ['===', '==', '=', '!='],
+        correctAnswer: '==='
+      },
+      task: 'Write examples using all comparison operators.'
+    },
+
+    // 🔁 CONTROL FLOW
+    'conditionals': {
+      id: 'conditionals',
+      title: 'Conditionals',
+      description: 'Control flow using if, else, and switch statements.',
+      videoUrl: 'https://www.youtube.com/embed/s9wW2PpJsmQ',
+      quiz: {
+        question: 'Which keyword is used for multiple conditions?',
+        options: ['switch', 'if', 'for', 'while'],
+        correctAnswer: 'switch'
+      },
+      task: 'Create a program that checks even or odd number.'
+    },
+
+    'loops': {
+      id: 'loops',
+      title: 'Loops',
+      description: 'Iterate using for, while, and do-while loops.',
+      videoUrl: 'https://www.youtube.com/embed/s9wW2PpJsmQ',
+      quiz: {
+        question: 'Which loop runs at least once?',
+        options: ['do-while', 'for', 'while', 'foreach'],
+        correctAnswer: 'do-while'
+      },
+      task: 'Print numbers from 1 to 10 using different loops.'
+    },
+
+    // 🧩 FUNCTIONS
+    'functions': {
+      id: 'functions',
+      title: 'Functions',
+      description: 'Create reusable blocks of code using functions.',
+      videoUrl: 'https://www.youtube.com/embed/N8ap4k_1QEQ',
+      quiz: {
+        question: 'Which keyword defines a function?',
+        options: ['function', 'def', 'func', 'method'],
+        correctAnswer: 'function'
+      },
+      task: 'Write a function that adds two numbers.'
+    },
+
+    'arrow-functions': {
+      id: 'arrow-functions',
+      title: 'Arrow Functions',
+      description: 'Use modern arrow syntax and understand lexical this.',
+      videoUrl: 'https://www.youtube.com/embed/h33Srr5J9nY',
+      quiz: {
+        question: 'Arrow functions use which symbol?',
+        options: ['=>', '->', '=', '::'],
+        correctAnswer: '=>'
+      },
+      task: 'Convert a normal function into an arrow function.'
+    },
+
+    // 📦 ARRAYS & OBJECTS
+    'arrays': {
+      id: 'arrays',
+      title: 'Arrays',
+      description: 'Work with array methods like map, filter, and reduce.',
+      videoUrl: 'https://www.youtube.com/embed/R8rmfD9Y5-c',
+      quiz: {
+        question: 'Which method creates a new array?',
+        options: ['map', 'push', 'pop', 'shift'],
+        correctAnswer: 'map'
+      },
+      task: 'Use map to double all numbers in an array.'
+    },
+
+    'objects': {
+      id: 'objects',
+      title: 'Objects',
+      description: 'Store structured data using key-value pairs.',
+      videoUrl: 'https://www.youtube.com/embed/PFmuCDHHpwk',
+      quiz: {
+        question: 'How do you access object property?',
+        options: ['obj.key', 'obj->key', 'obj:key', 'obj(key)'],
+        correctAnswer: 'obj.key'
+      },
+      task: 'Create an object representing a user and log properties.'
+    },
+
+    // 🌐 DOM
+    'dom-basics': {
+      id: 'dom-basics',
+      title: 'DOM Basics',
+      description: 'Interact with HTML elements using JavaScript.',
+      videoUrl: 'https://www.youtube.com/embed/0ik6X4DJKCc',
+      quiz: {
+        question: 'Which method selects element by ID?',
+        options: [
+          'getElementById',
+          'querySelectorAll',
+          'getElements',
+          'selectId'
+        ],
+        correctAnswer: 'getElementById'
+      },
+      task: 'Change text content of an element using JavaScript.'
+    },
+
+    'events': {
+      id: 'events',
+      title: 'Events',
+      description: 'Handle user interactions like clicks, input, and keyboard events.',
+      videoUrl: 'https://www.youtube.com/embed/XF1_MlZ5l6M',
+      quiz: {
+        question: 'Which event triggers on click?',
+        options: ['click', 'hover', 'press', 'change'],
+        correctAnswer: 'click'
+      },
+      task: 'Create a button that shows alert on click.'
+    },
+
+    // ⏳ ASYNC JS
+    'async-js': {
+      id: 'async-js',
+      title: 'Async JavaScript',
+      description: 'Understand callbacks, promises, and async/await.',
+      videoUrl: 'https://www.youtube.com/embed/PoRJizFvM7s',
+      quiz: {
+        question: 'Which keyword handles async functions?',
+        options: ['async', 'await', 'promise', 'delay'],
+        correctAnswer: 'async'
+      },
+      task: 'Create an async function that returns data after delay.'
+    },
+
+    'fetch-api': {
+      id: 'fetch-api',
+      title: 'Fetch API',
+      description: 'Make API calls and handle responses.',
+      videoUrl: 'https://www.youtube.com/embed/Oive66jrwBs',
+      quiz: {
+        question: 'Which method is used to fetch data?',
+        options: ['fetch()', 'get()', 'request()', 'call()'],
+        correctAnswer: 'fetch()'
+      },
+      task: 'Fetch data from a public API and log it.'
+    },
+
+    // ⚡ ADVANCED
+    'es6-features': {
+      id: 'es6-features',
+      title: 'ES6 Features',
+      description: 'Learn destructuring, spread, rest, and template literals.',
+      videoUrl: 'https://www.youtube.com/embed/NCwa_xi0Uuc',
+      quiz: {
+        question: 'Which operator spreads elements?',
+        options: ['...', '*', '&', '%'],
+        correctAnswer: '...'
+      },
+      task: 'Use destructuring to extract values from an object.'
+    },
+
+    'closures': {
+      id: 'closures',
+      title: 'Closures',
+      description: 'Understand scope and function memory in JavaScript.',
+      videoUrl: 'https://www.youtube.com/embed/3a0I8ICR1Vg',
+      quiz: {
+        question: 'Closures allow access to?',
+        options: [
+          'Outer scope',
+          'Global only',
+          'Local only',
+          'None'
+        ],
+        correctAnswer: 'Outer scope'
+      },
+      task: 'Write a function that returns another function using closure.'
     }
+
   };
 
   getLessonById(id: string): LessonContent | undefined {
