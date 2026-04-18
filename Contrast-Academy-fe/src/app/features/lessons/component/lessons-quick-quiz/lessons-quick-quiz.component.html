@@ -1,56 +1,93 @@
 <div class="bg-blue-600/5 border border-blue-500/10 rounded-2xl p-6 space-y-6 sticky top-24">
-    <div class="space-y-2">
-        <h2 class="text-lg font-bold text-white flex items-center gap-2">
-            <span>🧠</span> Quick Quiz
-        </h2>
-        <p class="text-slate-400 text-sm leading-relaxed">
-            {{ lesson.quiz.question }}
-        </p>
+    <!-- Quiz Finished View -->
+    <div *ngIf="isQuizFinished" class="space-y-6 text-center py-4">
+        <div class="space-y-2">
+            <h2 class="text-2xl font-bold text-white flex justify-center items-center gap-2">
+                <span *ngIf="allCorrect">🏆</span>
+                <span *ngIf="!allCorrect">🎯</span>
+                Quiz Complete!
+            </h2>
+            <p class="text-slate-400">
+                You scored {{ correctAnswersCount }} out of {{ lesson.quizzes.length }}!
+            </p>
+        </div>
+
+        <div class="p-4 rounded-xl text-sm font-bold border"
+             [ngClass]="allCorrect ? 'bg-green-500/10 text-green-400 border-green-500/20' : 'bg-blue-500/10 text-blue-400 border-blue-500/20'">
+            {{ allCorrect ? 'Perfect Score! Great job!' : 'Keep practicing and you will get them all!' }}
+        </div>
+
+        <button (click)="resetQuiz()"
+            class="w-full py-4 rounded-xl bg-blue-600/20 hover:bg-blue-600/40 text-blue-400 font-bold text-sm border border-blue-500/20 transition-all active:scale-95 mt-4">
+            Retake Quiz
+        </button>
     </div>
 
-    <div class="space-y-3">
-        <label *ngFor="let option of lesson.quiz.options"
-            (click)="selectOption(option)"
-            [ngClass]="{
-                'border-blue-500 bg-blue-500/10': selectedOption === option && !isSubmitted,
-                'border-green-500 bg-green-500/10': isSubmitted && option === lesson.quiz.correctAnswer,
-                'border-red-500 bg-red-500/10': isSubmitted && selectedOption === option && option !== lesson.quiz.correctAnswer,
-                'opacity-50 cursor-not-allowed': isSubmitted && option !== lesson.quiz.correctAnswer && option !== selectedOption,
-                'cursor-pointer hover:bg-white/[0.05]': !isSubmitted
-            }"
-            class="flex items-center gap-3 p-4 rounded-xl border border-white/5 bg-white/[0.02] hover:border-blue-500/30 transition-all group relative">
-            <input type="radio" name="quiz" 
-                [checked]="selectedOption === option"
-                [disabled]="isSubmitted"
-                class="w-4 h-4 accent-blue-500">
-            <span class="text-sm transition-colors"
+    <!-- Active Question View -->
+    <div *ngIf="!isQuizFinished" class="space-y-6">
+        <div class="flex justify-between items-center text-sm font-semibold text-blue-400">
+            <span>Question {{ currentQuestionIndex + 1 }} of {{ lesson.quizzes.length }}</span>
+        </div>
+
+        <div class="space-y-2">
+            <h2 class="text-lg font-bold text-white flex items-start gap-2 leading-relaxed">
+                <span class="mt-0.5">🧠</span> 
+                <span>{{ currentQuiz.question }}</span>
+            </h2>
+        </div>
+
+        <div class="space-y-3">
+            <label *ngFor="let option of currentQuiz.options"
+                (click)="selectOption(option)"
                 [ngClass]="{
-                    'text-white': selectedOption === option,
-                    'text-slate-300': selectedOption !== option
-                }">
-                {{ option }}
-            </span>
+                    'border-blue-500 bg-blue-500/10': selectedOptions[currentQuestionIndex] === option && !isQuestionSubmitted,
+                    'border-green-500 bg-green-500/10': isQuestionSubmitted && option === currentQuiz.correctAnswer,
+                    'border-red-500 bg-red-500/10': isQuestionSubmitted && selectedOptions[currentQuestionIndex] === option && option !== currentQuiz.correctAnswer,
+                    'opacity-50 cursor-not-allowed': isQuestionSubmitted && option !== currentQuiz.correctAnswer && option !== selectedOptions[currentQuestionIndex],
+                    'cursor-pointer hover:bg-white/[0.05]': !isQuestionSubmitted
+                }"
+                class="flex items-center gap-3 p-4 rounded-xl border border-white/5 bg-white/[0.02] hover:border-blue-500/30 transition-all group relative">
+                <input type="radio" name="activeQuiz" 
+                    [checked]="selectedOptions[currentQuestionIndex] === option"
+                    [disabled]="isQuestionSubmitted"
+                    class="w-4 h-4 accent-blue-500">
+                <span class="text-sm transition-colors"
+                    [ngClass]="{
+                        'text-white': selectedOptions[currentQuestionIndex] === option,
+                        'text-slate-300': selectedOptions[currentQuestionIndex] !== option
+                    }">
+                    {{ option }}
+                </span>
 
-            <!-- Result Icons -->
-            <ng-container *ngIf="isSubmitted">
-                <span *ngIf="option === lesson.quiz.correctAnswer" class="ml-auto text-green-500">✅</span>
-                <span *ngIf="selectedOption === option && option !== lesson.quiz.correctAnswer" class="ml-auto text-red-500">❌</span>
-            </ng-container>
-        </label>
+                <!-- Result Icons -->
+                <ng-container *ngIf="isQuestionSubmitted">
+                    <span *ngIf="option === currentQuiz.correctAnswer" class="ml-auto text-green-500">✅</span>
+                    <span *ngIf="selectedOptions[currentQuestionIndex] === option && option !== currentQuiz.correctAnswer" class="ml-auto text-red-500">❌</span>
+                </ng-container>
+            </label>
+        </div>
+
+        <!-- Alert Message when submitted -->
+        <div *ngIf="isQuestionSubmitted" 
+             class="p-4 rounded-xl text-center text-sm font-bold border"
+             [ngClass]="isCorrect(currentQuestionIndex) ? 'bg-green-500/10 text-green-400 border-green-500/20' : 'bg-red-500/10 text-red-400 border-red-500/20'">
+            {{ isCorrect(currentQuestionIndex) ? '🎉 Correct Answer!' : '😔 Incorrect. The correct answer was: ' + currentQuiz.correctAnswer }}
+        </div>
+
+        <button *ngIf="!isQuestionSubmitted"
+            (click)="submitQuestion()"
+            [disabled]="!selectedOptions[currentQuestionIndex]"
+            [ngClass]="{'opacity-50 cursor-not-allowed text-white/50': !selectedOptions[currentQuestionIndex]}"
+            class="w-full py-4 mt-4 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm shadow-lg shadow-blue-500/20 transition-all active:scale-95">
+            Submit Answer
+        </button>
+
+        <button *ngIf="isQuestionSubmitted"
+            (click)="nextQuestion()"
+            class="w-full py-4 mt-4 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm shadow-lg shadow-blue-500/20 transition-all active:scale-95 flex justify-center items-center gap-2">
+            {{ isLastQuestion ? 'Finish Quiz' : 'Next Question' }}
+            <span *ngIf="!isLastQuestion">→</span>
+            <span *ngIf="isLastQuestion">🏁</span>
+        </button>
     </div>
-
-    <!-- Alert Message -->
-    <div *ngIf="isSubmitted" 
-         class="p-4 rounded-xl text-center text-sm font-bold border"
-         [ngClass]="isCorrect ? 'bg-green-500/10 text-green-400 border-green-500/20' : 'bg-red-500/10 text-red-400 border-red-500/20'">
-        {{ isCorrect ? '🎉 Correct Answer! Great job!' : '😔 Incorrect. The correct answer was: ' + lesson.quiz.correctAnswer }}
-    </div>
-
-    <button *ngIf="!isSubmitted"
-        (click)="submitAnswer()"
-        [disabled]="!selectedOption"
-        [ngClass]="{'opacity-50 cursor-not-allowed': !selectedOption}"
-        class="w-full py-4 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm shadow-lg shadow-blue-500/20 transition-all active:scale-95">
-        Submit Answer
-    </button>
 </div>

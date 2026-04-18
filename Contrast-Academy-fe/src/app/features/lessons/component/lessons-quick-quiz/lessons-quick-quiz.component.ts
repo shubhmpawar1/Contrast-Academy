@@ -12,30 +12,66 @@ import { LessonContent } from '../../services/lessons.service';
 export class LessonsQuickQuizComponent implements OnChanges {
   @Input() lesson!: LessonContent;
   
-  selectedOption: string | null = null;
-  isSubmitted: boolean = false;
+  currentQuestionIndex: number = 0;
+  selectedOptions: { [index: number]: string } = {};
+  isQuestionSubmitted: boolean = false;
+  isQuizFinished: boolean = false;
   
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['lesson']) {
-      // Reset quiz state when we navigate to a new lesson
-      this.selectedOption = null;
-      this.isSubmitted = false;
+      this.resetQuiz();
     }
+  }
+
+  get currentQuiz() {
+    return this.lesson.quizzes[this.currentQuestionIndex];
+  }
+
+  get isLastQuestion() {
+    return this.currentQuestionIndex === this.lesson.quizzes.length - 1;
+  }
+
+  get correctAnswersCount() {
+    return Object.keys(this.selectedOptions)
+      .filter(i => this.isCorrect(Number(i)))
+      .length;
   }
 
   selectOption(option: string): void {
-    if (!this.isSubmitted) {
-      this.selectedOption = option;
+    if (!this.isQuestionSubmitted && !this.isQuizFinished) {
+      this.selectedOptions[this.currentQuestionIndex] = option;
     }
   }
 
-  submitAnswer(): void {
-    if (this.selectedOption) {
-      this.isSubmitted = true;
+  submitQuestion(): void {
+    if (this.selectedOptions[this.currentQuestionIndex]) {
+      this.isQuestionSubmitted = true;
     }
   }
 
-  get isCorrect(): boolean {
-    return this.selectedOption === this.lesson.quiz.correctAnswer;
+  nextQuestion(): void {
+    if (this.isLastQuestion) {
+      this.isQuizFinished = true;
+    } else {
+      this.currentQuestionIndex++;
+      this.isQuestionSubmitted = false;
+    }
+  }
+
+  isCorrect(index: number): boolean {
+    if (!this.lesson.quizzes) return false;
+    return this.selectedOptions[index] === this.lesson.quizzes[index].correctAnswer;
+  }
+
+  get allCorrect(): boolean {
+    if (!this.lesson.quizzes) return true;
+    return this.correctAnswersCount === this.lesson.quizzes.length;
+  }
+  
+  resetQuiz(): void {
+    this.currentQuestionIndex = 0;
+    this.selectedOptions = {};
+    this.isQuestionSubmitted = false;
+    this.isQuizFinished = false;
   }
 }
