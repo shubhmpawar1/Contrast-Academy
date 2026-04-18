@@ -694,7 +694,217 @@ export class LessonsService {
         correctAnswer: 'Outer scope'
       },
       task: 'Write a function that returns another function using closure.'
+    },
+    // Angular
+    // 🔰 BASICS
+    'what-is-angular': {
+      id: 'what-is-angular',
+      title: 'What is Angular?',
+      description: 'Understand Angular as a powerful frontend framework for building scalable single-page applications.',
+      videoUrl: 'https://www.youtube.com/embed/3qBXWUpoPHo',
+      quiz: {
+        question: 'Angular is primarily used for?',
+        options: [
+          'Backend development',
+          'Frontend development',
+          'Database management',
+          'Operating systems'
+        ],
+        correctAnswer: 'Frontend development'
+      },
+      task: 'Research Angular features and list 5 advantages.'
+    },
+
+    'angular-setup': {
+      id: 'angular-setup',
+      title: 'Angular Setup & CLI',
+      description: 'Install Angular CLI and create your first Angular project.',
+      videoUrl: 'https://www.youtube.com/embed/0LhBvp8qpro',
+      quiz: {
+        question: 'Which command creates a new Angular project?',
+        options: ['ng new', 'ng create', 'ng init', 'npm new'],
+        correctAnswer: 'ng new'
+      },
+      task: 'Install Angular CLI and create a new project.'
+    },
+
+    'project-structure': {
+      id: 'project-structure',
+      title: 'Project Structure',
+      description: 'Understand Angular folder structure, modules, and files.',
+      videoUrl: 'https://www.youtube.com/embed/2OHbjep_WjQ',
+      quiz: {
+        question: 'Which folder contains components?',
+        options: ['src/app', 'dist', 'node_modules', 'assets'],
+        correctAnswer: 'src/app'
+      },
+      task: 'Explore your project and identify key folders.'
+    },
+
+    // 🧩 COMPONENTS
+    'components': {
+      id: 'components',
+      title: 'Components',
+      description: 'Learn how to create and use components in Angular.',
+      videoUrl: 'https://www.youtube.com/embed/6u-b4M0M5r8',
+      quiz: {
+        question: 'Which command creates a component?',
+        options: [
+          'ng generate component',
+          'ng create component',
+          'ng component new',
+          'ng add component'
+        ],
+        correctAnswer: 'ng generate component'
+      },
+      task: 'Create a new component and display it.'
+    },
+
+    'data-binding': {
+      id: 'data-binding',
+      title: 'Data Binding',
+      description: 'Understand interpolation, property, event, and two-way binding.',
+      videoUrl: 'https://www.youtube.com/embed/k5E2AVpwsko',
+      quiz: {
+        question: 'Which syntax is used for interpolation?',
+        options: ['{{ }}', '[]', '()', '{}'],
+        correctAnswer: '{{ }}'
+      },
+      task: 'Bind data from TS to HTML using interpolation.'
+    },
+
+    'directives': {
+      id: 'directives',
+      title: 'Directives',
+      description: 'Use structural and attribute directives like *ngIf and *ngFor.',
+      videoUrl: 'https://www.youtube.com/embed/5z6h0lK3v9Y',
+      quiz: {
+        question: 'Which directive loops data?',
+        options: ['*ngFor', '*ngIf', '*ngSwitch', '*ngClass'],
+        correctAnswer: '*ngFor'
+      },
+      task: 'Display a list using *ngFor.'
+    },
+
+    // 🧱 SERVICES & DI
+    'services-di': {
+      id: 'services-di',
+      title: 'Services & Dependency Injection',
+      description: 'Understand how Angular handles shared logic and DI.',
+      videoUrl: 'https://www.youtube.com/embed/1tRLveSyNz8',
+      quiz: {
+        question: 'Which decorator defines a service?',
+        options: ['@Injectable', '@Component', '@NgModule', '@Service'],
+        correctAnswer: '@Injectable'
+      },
+      task: 'Create a service and inject it into a component.'
+    },
+
+    // 🌐 ROUTING
+    'routing': {
+      id: 'routing',
+      title: 'Routing',
+      description: 'Navigate between components using Angular Router.',
+      videoUrl: 'https://www.youtube.com/embed/Np3ULAMqwNo',
+      quiz: {
+        question: 'Which module enables routing?',
+        options: [
+          'RouterModule',
+          'RouteModule',
+          'NavigationModule',
+          'PathModule'
+        ],
+        correctAnswer: 'RouterModule'
+      },
+      task: 'Create routes for 2 components.'
+    },
+
+    // 📦 FORMS
+    'template-forms': {
+      id: 'template-forms',
+      title: 'Template Driven Forms',
+      description: 'Build simple forms using Angular templates.',
+      videoUrl: 'https://www.youtube.com/embed/f7r2b7s7XzI',
+      quiz: {
+        question: 'Which directive is used in template forms?',
+        options: ['ngModel', 'formControl', 'formGroup', 'controlName'],
+        correctAnswer: 'ngModel'
+      },
+      task: 'Create a login form using ngModel.'
+    },
+
+    'reactive-forms': {
+      id: 'reactive-forms',
+      title: 'Reactive Forms',
+      description: 'Build scalable forms using FormGroup and FormControl.',
+      videoUrl: 'https://www.youtube.com/embed/JeeUY6WaXiA',
+      quiz: {
+        question: 'Which class manages form group?',
+        options: ['FormGroup', 'FormControl', 'FormBuilder', 'FormsModule'],
+        correctAnswer: 'FormGroup'
+      },
+      task: 'Create a reactive form with validation.'
+    },
+
+    // 🌐 API & HTTP
+    'http-client': {
+      id: 'http-client',
+      title: 'HTTP Client',
+      description: 'Fetch data from APIs using HttpClient.',
+      videoUrl: 'https://www.youtube.com/embed/2OHbjep_WjQ',
+      quiz: {
+        question: 'Which module is used for HTTP?',
+        options: [
+          'HttpClientModule',
+          'HttpModule',
+          'ApiModule',
+          'FetchModule'
+        ],
+        correctAnswer: 'HttpClientModule'
+      },
+      task: 'Fetch data from a public API.'
+    },
+
+    // ⚡ ADVANCED
+    'lifecycle-hooks': {
+      id: 'lifecycle-hooks',
+      title: 'Lifecycle Hooks',
+      description: 'Understand ngOnInit, ngOnDestroy, and component lifecycle.',
+      videoUrl: 'https://www.youtube.com/embed/3dHNOWTI7H8',
+      quiz: {
+        question: 'Which hook runs on init?',
+        options: ['ngOnInit', 'ngStart', 'ngLoad', 'ngInit'],
+        correctAnswer: 'ngOnInit'
+      },
+      task: 'Log lifecycle hooks in a component.'
+    },
+
+    'pipes': {
+      id: 'pipes',
+      title: 'Pipes',
+      description: 'Transform data using built-in and custom pipes.',
+      videoUrl: 'https://www.youtube.com/embed/0u0Z7lQjLQk',
+      quiz: {
+        question: 'Which pipe formats date?',
+        options: ['date', 'currency', 'json', 'async'],
+        correctAnswer: 'date'
+      },
+      task: 'Use date and currency pipes.'
+    },
+
+    'lazy-loading': {
+      id: 'lazy-loading',
+      title: 'Lazy Loading',
+      description: 'Improve performance by loading modules on demand.',
+      videoUrl: 'https://www.youtube.com/embed/SlxYf0lWbF0',
+      quiz: {
+        question: 'Lazy loading improves?',
+        options: ['Performance', 'UI', 'CSS', 'Database'],
+        correctAnswer: 'Performance'
+      },
+      task: 'Implement lazy-loaded module.'
     }
+
 
   };
 

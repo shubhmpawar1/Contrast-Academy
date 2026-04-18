@@ -264,33 +264,63 @@ export class CourseDetailService {
       level: 'Intermediate to Advanced',
       totalLessons: 72,
       modules: [
+
         {
-          title: 'Angular Fundamentals',
-          description: 'Components, templates, data binding, and directives',
+          title: 'Angular Basics',
+          description: 'Introduction and setup of Angular',
           lessons: [
-            { id: 'standalone-components', title: 'Standalone Components' },
-            { id: 'input-output', title: 'Input & Output' },
-            { id: 'signals-api', title: 'Signals API' }
+            { id: 'what-is-angular', title: 'What is Angular?' },
+            { id: 'angular-setup', title: 'Angular Setup & CLI' },
+            { id: 'project-structure', title: 'Project Structure' }
           ]
         },
+
         {
-          title: 'Services & DI',
-          description: 'Dependency injection, services, and HTTP client',
+          title: 'Components & Templates',
+          description: 'Building UI using components and bindings',
           lessons: [
-            { id: 'injectable-services', title: 'Injectable Services' },
-            { id: 'http-interceptors', title: 'HTTP Interceptors' },
-            { id: 'providedin-root', title: 'ProvidedIn Root' }
+            { id: 'components', title: 'Components' },
+            { id: 'data-binding', title: 'Data Binding' },
+            { id: 'directives', title: 'Directives' }
           ]
         },
+
         {
-          title: 'Routing & Navigation',
-          description: 'Router, guards, lazy loading, and resolvers',
+          title: 'Services & Routing',
+          description: 'Application architecture and navigation',
           lessons: [
-            { id: 'child-routes', title: 'Child Routes' },
-            { id: 'route-guards', title: 'Route Guards' },
-            { id: 'dynamic-params', title: 'Dynamic Params' }
+            { id: 'services-di', title: 'Services & Dependency Injection' },
+            { id: 'routing', title: 'Routing' }
+          ]
+        },
+
+        {
+          title: 'Forms Handling',
+          description: 'Managing user input and validation',
+          lessons: [
+            { id: 'template-forms', title: 'Template Driven Forms' },
+            { id: 'reactive-forms', title: 'Reactive Forms' }
+          ]
+        },
+
+        {
+          title: 'API Integration',
+          description: 'Working with backend services',
+          lessons: [
+            { id: 'http-client', title: 'HTTP Client' }
+          ]
+        },
+
+        {
+          title: 'Advanced Angular',
+          description: 'Performance and advanced concepts',
+          lessons: [
+            { id: 'lifecycle-hooks', title: 'Lifecycle Hooks' },
+            { id: 'pipes', title: 'Pipes' },
+            { id: 'lazy-loading', title: 'Lazy Loading' }
           ]
         }
+
       ],
       prerequisites: ['Strong JavaScript/TypeScript knowledge', 'HTML & CSS proficiency', 'Understanding of REST APIs'],
       ctaText: 'Build with Angular Today 🅰️'
