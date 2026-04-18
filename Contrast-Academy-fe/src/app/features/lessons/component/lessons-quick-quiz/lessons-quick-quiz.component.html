@@ -1,1 +1,25 @@
-<p>lessons-quick-quiz works!</p>
+<div class="bg-blue-600/5 border border-blue-500/10 rounded-2xl p-6 space-y-6 sticky top-24">
+    <div class="space-y-2">
+        <h2 class="text-lg font-bold text-white flex items-center gap-2">
+            <span>🧠</span> Quick Quiz
+        </h2>
+        <p class="text-slate-400 text-sm leading-relaxed">
+            {{ lesson.quiz.question }}
+        </p>
+    </div>
+
+    <div class="space-y-3">
+        <label *ngFor="let option of lesson.quiz.options"
+            class="flex items-center gap-3 p-4 rounded-xl border border-white/5 bg-white/[0.02] hover:bg-white/[0.05] hover:border-blue-500/30 cursor-pointer transition-all group">
+            <input type="radio" name="quiz" class="w-4 h-4 accent-blue-500">
+            <span class="text-slate-300 text-sm group-hover:text-white transition-colors">
+                {{ option }}
+            </span>
+        </label>
+    </div>
+
+    <button
+        class="w-full py-4 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm shadow-lg shadow-blue-500/20 transition-all active:scale-95">
+        Submit Answer
+    </button>
+</div>
