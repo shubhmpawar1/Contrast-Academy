@@ -2,8 +2,7 @@
     <h2 class="text-2xl font-bold text-white mb-6 tracking-wide">📚 Course Modules</h2>
 
     <div class="space-y-4">
-        <div *ngFor="let module of course.modules; let i = index" 
-             class="group rounded-2xl border border-white/10 bg-[#0F172A] p-6
+        <div *ngFor="let module of course.modules; let i = index" class="group rounded-2xl border border-white/10 bg-[#0F172A] p-6
                     hover:border-blue-500/30 hover:shadow-[0_4px_20px_rgba(59,130,246,0.1)]
                     transition-all duration-300 cursor-pointer">
             <div class="flex items-start gap-4">
@@ -25,17 +24,24 @@
                                 group-hover:max-h-48 group-hover:opacity-100 
                                 transition-all duration-500 ease-in-out">
                         <div class="h-px bg-white/5 mb-3"></div>
-                        <div *ngFor="let lesson of module.lessonList" 
-                             class="flex items-center gap-3 text-sm text-white/40 hover:text-white/70 transition-colors duration-200">
-                            <span class="w-1.5 h-1.5 rounded-full bg-blue-500/50"></span>
-                            {{ lesson }}
+                        <div *ngFor="let lesson of module.lessonList"
+                            class="flex items-center gap-3 px-4 py-2.5 text-sm md:text-base text-white/60 hover:text-white hover:bg-white/5 rounded-lg transition-all duration-200 cursor-pointer">
+
+                            <!-- Dot -->
+                            <span class="w-2 h-2 rounded-full bg-blue-400"></span>
+
+                            <!-- Lesson text -->
+                            <span class="leading-relaxed">
+                                {{ lesson }}
+                            </span>
                         </div>
                     </div>
                 </div>
                 <!-- Lessons Count -->
-                <span class="text-xs font-bold text-blue-400 bg-blue-500/10 px-3 py-1.5
-                                     rounded-full border border-blue-500/20 shrink-0">
-                    {{ module.lessons }} Lessons
+                <span
+                    class="text-xs font-bold text-white  bg-blue-500/20 px-3 py-1.5 rounded-full  border border-blue-400/30 shadow-sm shadow-blue-500/10 flex items-center gap-2 shrink-0">
+
+                    📘 {{ module.lessons }} Lessons
                 </span>
             </div>
         </div>
