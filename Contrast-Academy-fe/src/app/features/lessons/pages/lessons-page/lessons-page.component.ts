@@ -5,11 +5,18 @@ import { NavbarComponent } from '../../../../layout/navbar/navbar/navbar.compone
 import { LessonsService, LessonContent } from '../../services/lessons.service';
 import { LessonsVideoSectionComponent } from '../../component/lessons-video-section/lessons-video-section.component';
 import { LessonDescriptionComponent } from '../../component/lesson-description/lesson-description.component';
+import { LessonTaskComponent } from '../../component/lesson-task/lesson-task.component';
 
 @Component({
   selector: 'app-lessons-page',
   standalone: true,
-  imports: [CommonModule, NavbarComponent, LessonsVideoSectionComponent, LessonDescriptionComponent],
+  imports: [
+    CommonModule, 
+    NavbarComponent, 
+    LessonsVideoSectionComponent, 
+    LessonDescriptionComponent,
+    LessonTaskComponent
+  ],
   templateUrl: './lessons-page.component.html',
   styleUrl: './lessons-page.component.css'
 })
