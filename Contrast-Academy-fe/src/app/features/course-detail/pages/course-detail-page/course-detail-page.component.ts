@@ -3,12 +3,13 @@ import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CourseDetailService, CourseDetail } from '../../services/course-detail.service';
 import { CourseDetailHeroSectionComponent } from '../../componet/course-detail-hero-section/course-detail-hero-section.component';
+import { CourseDetailModulesSectionComponent } from '../../componet/course-detail-modules-section/course-detail-modules-section.component';
 import { NavbarComponent } from "../../../../layout/navbar/navbar/navbar.component";
 
 @Component({
   selector: 'app-course-detail-page',
   standalone: true,
-  imports: [CommonModule, CourseDetailHeroSectionComponent, NavbarComponent],
+  imports: [CommonModule, CourseDetailHeroSectionComponent, CourseDetailModulesSectionComponent, NavbarComponent],
   templateUrl: './course-detail-page.component.html',
   styleUrl: './course-detail-page.component.css'
 })
