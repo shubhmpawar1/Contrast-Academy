@@ -31,9 +31,11 @@ export class LessonsPageComponent implements OnInit {
   lesson: LessonContent | undefined;
 
   ngOnInit(): void {
-    const id = this.route.snapshot.paramMap.get('id');
-    if (id) {
-      this.lesson = this.lessonsService.getLessonById(id);
-    }
+    this.route.paramMap.subscribe(params => {
+      const id = params.get('id');
+      if (id) {
+        this.lesson = this.lessonsService.getLessonById(id);
+      }
+    });
   }
 }

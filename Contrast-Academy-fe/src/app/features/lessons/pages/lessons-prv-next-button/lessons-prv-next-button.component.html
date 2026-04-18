@@ -1,11 +1,11 @@
 <div class="flex justify-between items-center pt-10 border-t border-white/5">
-    <a *ngIf="prevId" [routerLink]="['/features/lessons', prevId]"
+    <a *ngIf="prevId" [routerLink]="['/lesson', prevId]"
         class="px-6 py-3 text-slate-400 hover:text-white transition-colors flex items-center gap-2 font-medium cursor-pointer no-underline">
         <span>←</span> Previous
     </a>
     <div *ngIf="!prevId"></div>
 
-    <a *ngIf="nextId" [routerLink]="['/features/lessons', nextId]"
+    <a *ngIf="nextId" [routerLink]="['/lesson', nextId]"
         class="px-8 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-sm transition-all cursor-pointer no-underline">
         Next Lesson <span>→</span>
     </a>

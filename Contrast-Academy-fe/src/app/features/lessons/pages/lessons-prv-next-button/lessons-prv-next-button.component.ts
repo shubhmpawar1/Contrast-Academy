@@ -1,7 +1,7 @@
 import { Component, Input, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
-import { LessonsService } from '../../services/lessons.service';
+import { CourseDetailService } from '../../../course-detail/services/course-detail.service';
 
 @Component({
   selector: 'app-lessons-prv-next-button',
@@ -13,13 +13,13 @@ import { LessonsService } from '../../services/lessons.service';
 export class LessonsPrvNextButtonComponent {
   @Input() currentLessonId!: string;
   
-  private lessonsService = inject(LessonsService);
+  private courseDetailService = inject(CourseDetailService);
 
   get prevId(): string | null {
-    return this.lessonsService.getPreviousLessonId(this.currentLessonId);
+    return this.courseDetailService.getPreviousLessonId(this.currentLessonId);
   }
 
   get nextId(): string | null {
-    return this.lessonsService.getNextLessonId(this.currentLessonId);
+    return this.courseDetailService.getNextLessonId(this.currentLessonId);
   }
 }

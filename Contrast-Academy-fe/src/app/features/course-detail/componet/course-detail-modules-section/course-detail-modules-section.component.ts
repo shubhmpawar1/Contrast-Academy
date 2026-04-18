@@ -16,14 +16,7 @@ export class CourseDetailModulesSectionComponent {
 
   @Input() course!: CourseDetail;
 
-  goToLesson(lesson: string): void {
-    // Generate a URL-friendly slug from the lesson title
-    const slug = lesson
-      .toLowerCase()
-      .replace(/ & /g, '-')
-      .replace(/ /g, '-')
-      .replace(/\?/g, '');
-      
-    this.router.navigate(['/lesson', slug]);
+  goToLesson(lessonId: string): void {
+    this.router.navigate(['/lesson', lessonId]);
   }
 }
