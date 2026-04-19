@@ -33,7 +33,6 @@ export class LoginPageComponent {
       this.authService.login(this.loginForm.value).subscribe({
         next: (res: any) => {
           console.log('Login success', res);
-          localStorage.setItem('token', res.token);
           this.router.navigate(['/dashboard']);
         },
         error: (err: any) => {
