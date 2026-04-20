@@ -7,6 +7,7 @@ import { RegisterPageComponent } from './features/auth/pages/register-page/regis
 import { LoginPageComponent } from './features/auth/pages/login-page/login-page/login-page.component';
 import { CourseAssignComponent } from './features/course-assign/pages/course-assign/course-assign.component';
 import { adminGuard } from './core/guards/admin.guard';
+import { NotFoundPageComponent } from './features/not-found/pages/not-found-page/not-found-page.component';
 
 
 export const routes: Routes = [
@@ -37,6 +38,14 @@ export const routes: Routes = [
         path: 'course-assign',
         component: CourseAssignComponent,
         canActivate: [adminGuard]
+    },
+    {
+        path: '404',
+        component: NotFoundPageComponent
+    },
+    {
+        path: '**',
+        redirectTo: '404'
     }
 
 ];
