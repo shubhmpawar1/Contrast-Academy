@@ -5,6 +5,7 @@ import { CourseDetailPageComponent } from './features/course-detail/pages/course
 import { LessonsPageComponent } from './features/lessons/pages/lessons-page/lessons-page.component';
 import { RegisterPageComponent } from './features/auth/pages/register-page/register-page/register-page.component';
 import { LoginPageComponent } from './features/auth/pages/login-page/login-page/login-page.component';
+import { CourseAssignComponent } from './features/course-assign/pages/course-assign/course-assign.component';
 
 export const routes: Routes = [
     {
@@ -29,5 +30,9 @@ export const routes: Routes = [
     {
         path: 'lesson/:id',
         component: LessonsPageComponent
+    },
+    {
+        path: 'course-assign',
+        component: CourseAssignComponent
     }
 ];
