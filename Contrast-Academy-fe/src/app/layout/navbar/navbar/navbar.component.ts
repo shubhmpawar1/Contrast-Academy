@@ -1,6 +1,6 @@
 import { Component, inject, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import { RouterLink, RouterLinkActive, Router } from '@angular/router';
 import { CourseDetailService, CourseDetail } from '../../../features/course-detail/services/course-detail.service';
 import { AuthService } from '../../../features/auth/services/auth.service';
 import { Subscription } from 'rxjs';
@@ -15,6 +15,7 @@ import { Subscription } from 'rxjs';
 export class NavbarComponent implements OnInit, OnDestroy {
   private courseService = inject(CourseDetailService);
   private authService = inject(AuthService);
+  private router = inject(Router);
   
   courses: CourseDetail[] = this.courseService.getAllCourses();
   currentUser: any = null;
@@ -32,5 +33,6 @@ export class NavbarComponent implements OnInit, OnDestroy {
 
   logout() {
     this.authService.logout();
+    this.router.navigate(['/login']);
   }
 }
