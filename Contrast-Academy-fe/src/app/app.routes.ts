@@ -6,6 +6,8 @@ import { LessonsPageComponent } from './features/lessons/pages/lessons-page/less
 import { RegisterPageComponent } from './features/auth/pages/register-page/register-page/register-page.component';
 import { LoginPageComponent } from './features/auth/pages/login-page/login-page/login-page.component';
 import { CourseAssignComponent } from './features/course-assign/pages/course-assign/course-assign.component';
+import { adminGuard } from './core/guards/admin.guard';
+
 
 export const routes: Routes = [
     {
@@ -33,6 +35,8 @@ export const routes: Routes = [
     },
     {
         path: 'course-assign',
-        component: CourseAssignComponent
+        component: CourseAssignComponent,
+        canActivate: [adminGuard]
     }
+
 ];

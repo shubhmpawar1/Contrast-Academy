@@ -59,7 +59,6 @@
               focus:border-blue-500 transition-all" />
                     </div>
 
-                    <!-- Confirm Password -->
                     <div>
                         <label class="text-xs text-neutral-400 font-semibold">Confirm Password</label>
                         <input type="password" formControlName="confirmPassword" placeholder="Confirm password" class="mt-1 w-full px-4 py-2.5 rounded-xl bg-neutral-800/60 
@@ -67,6 +66,19 @@
               focus:outline-none focus:ring-2 focus:ring-blue-500/40 
               focus:border-blue-500 transition-all" />
                     </div>
+
+                    <!-- Role Selection -->
+                    <div>
+                        <label class="text-xs text-neutral-400 font-semibold">Account Type</label>
+                        <select formControlName="role" class="mt-1 w-full px-4 py-2.5 rounded-xl bg-neutral-800/60 
+              border border-white/10 text-white
+              focus:outline-none focus:ring-2 focus:ring-blue-500/40 
+              focus:border-blue-500 transition-all">
+                            <option value="STUDENT">Student</option>
+                            <option value="COURSE_ADMIN">Course Admin</option>
+                        </select>
+                    </div>
+
 
                     <!-- Terms -->
                     <div class="flex items-center gap-2 text-xs text-neutral-400 mt-2">

@@ -21,8 +21,10 @@ export class RegisterPageComponent {
     email: ['', [Validators.required, Validators.email]],
     password: ['', [Validators.required, Validators.minLength(6)]],
     confirmPassword: ['', Validators.required],
+    role: ['STUDENT', Validators.required],
     agreeTerms: [false, Validators.requiredTrue]
   });
+
 
   error: string | null = null;
   loading = false;
