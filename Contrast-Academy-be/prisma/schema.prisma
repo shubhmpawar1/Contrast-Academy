@@ -18,7 +18,6 @@ model User {
   email       String       @unique
   password    String
   role        Role         @default(STUDENT)
-  enrollments Enrollment[]
 }
 
 model Course {
@@ -28,19 +27,8 @@ model Course {
   description String
   icon        String?
   badge       String?
-  enrollments Enrollment[]
 }
 
-model Enrollment {
-  id        Int      @id @default(autoincrement())
-  userId    Int
-  courseId  Int
-  user      User     @relation(fields: [userId], references: [id])
-  course    Course   @relation(fields: [courseId], references: [id])
-  createdAt DateTime @default(now())
-
-  @@unique([userId, courseId])
-}
 
 enum Role {
   STUDENT
