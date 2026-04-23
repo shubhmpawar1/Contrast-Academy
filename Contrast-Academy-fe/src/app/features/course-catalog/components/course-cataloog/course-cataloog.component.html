@@ -4,12 +4,12 @@
 
         <!-- Card -->
         <div *ngFor="let course of courses; trackBy: trackByTitle" class="group rounded-2xl border border-white/10 bg-[#0F172A]
-                p-6 transition-all duration-300 hover:shadow-[0_8px_30px_rgba(255,255,255,0.05)] hover:-translate-y-1">
+            p-6 transition-all duration-300 hover:shadow-[0_8px_30px_rgba(255,255,255,0.05)] hover:-translate-y-1">
 
-            <!-- Icon -->
+            <!-- Icon (temporary UI fallback) -->
             <div class="w-14 h-14 flex items-center justify-center rounded-xl
-                  bg-[#111C33] mb-5 text-2xl group-hover:scale-110 transition-transform">
-                {{ course.icon }}
+                bg-[#111C33] mb-5 text-2xl group-hover:scale-110 transition-transform">
+                📘
             </div>
 
             <!-- Title -->
@@ -22,17 +22,19 @@
                 {{ course.description }}
             </p>
 
-            <!-- Badge -->
+            <!-- Badge (UI fallback) -->
             <span class="inline-block mt-5 text-[10px] font-bold tracking-widest px-3 py-1.5 rounded-full
-                   bg-green-500/10 text-green-400 border border-green-500/20 uppercase">
-                {{ course.badge }}
+                bg-green-500/10 text-green-400 border border-green-500/20 uppercase">
+                AVAILABLE NOW
             </span>
 
             <!-- Button -->
-            <button (click)="goToCourse(course.id)" class="mt-6 w-full py-3 rounded-xl text-sm font-bold
-               bg-gradient-to-r from-blue-500 to-blue-600 text-white shadow-[0_0_15px_rgba(59,130,246,0.3)]
-               hover:from-blue-600 hover:to-blue-700 hover:shadow-[0_0_20px_rgba(59,130,246,0.5)] transition duration-300">
-                {{ course.buttonText }}
+            <button (click)="goToCourse(course.slug)"
+                class="mt-6 w-full py-3 rounded-xl text-sm font-bold
+                bg-gradient-to-r from-blue-500 to-blue-600 text-white shadow-[0_0_15px_rgba(59,130,246,0.3)]
+                hover:from-blue-600 hover:to-blue-700 hover:shadow-[0_0_20px_rgba(59,130,246,0.5)] transition duration-300">
+
+                Start Learning 🎯
             </button>
 
         </div>
