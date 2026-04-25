@@ -19,7 +19,7 @@ export class CourseCataloogComponent {
     return course.title;
   }
 
-  goToCourse(slug: string) {
-    this.router.navigate(['/courses', slug]);
+  goToCourse(id: string) {
+    this.router.navigate(['/course', id]);
   }
 }
